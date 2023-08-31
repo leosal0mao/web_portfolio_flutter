@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:web_portfolio_flutter/helpers/constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -11,13 +12,14 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
   int selectedIndex = 0;
   int hoverIndex = 0;
-  List<String> menuItems = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-  ];
+
+  get localization => AppLocalizations.of(context);
+  List<String> menuItems = ['a', 'b', 'c'];
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

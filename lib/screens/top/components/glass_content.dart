@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:web_portfolio_flutter/helpers/constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class GlassContent extends StatelessWidget {
   const GlassContent({
@@ -27,7 +28,7 @@ class GlassContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "data",
+                AppLocalizations.of(context)!.about,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white),
               ),
               const Text(
