@@ -6,7 +6,7 @@ class Picture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(maxWidth: 700, maxHeight: 900),
+      constraints: const BoxConstraints(maxWidth: 800, maxHeight: 1100),
       child: Image.asset("assets/picture.png"),
     );
   }

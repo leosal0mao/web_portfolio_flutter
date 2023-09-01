@@ -4,6 +4,10 @@
     "home": "Home",
     "about": "Sobre",
     "services": "Serviços",
-    "recentWorks": "Trabalhos Recentes",
-    "contact": "Contatos"
+    "recentWorks": "Trabalhos",
+    "contact": "Contatos",
+    "hello": "Olá!",
+    "leonardo": "Léo",
+    "salomao": "Salomão",
+    "programmer": "Engenheiro de software, desenvolvedor Flutter."
 }

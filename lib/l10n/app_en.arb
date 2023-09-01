@@ -5,5 +5,9 @@
     "about": "About",
     "services": "Services",
     "recentWorks": "Recent Works",
-    "contact": "Contact"
+    "contact": "Contact",
+    "hello": "Hi!",
+    "leonardo": "Leo",
+    "salomao": "Salomao",
+    "programmer": "Software engineer, Flutter developer."
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio_flutter/helpers/constants.dart';
 import 'package:web_portfolio_flutter/screens/top/components/menu.dart';
 import 'package:web_portfolio_flutter/screens/top/components/picture.dart';
@@ -12,10 +13,9 @@ class TopSection extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Material(
-      elevation: 30,
       child: Container(
         alignment: Alignment.center,
-        constraints: const BoxConstraints(maxHeight: 900, minHeight: 700),
+        constraints: BoxConstraints(maxHeight: size.height.toDouble(), minHeight: 700),
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -29,15 +29,19 @@ class TopSection extends StatelessWidget {
           child: Stack(
             children: [
               BlurBoxLogo(size: size),
-              const Positioned(
-                bottom: 0,
-                right: 0,
-                child: Picture(),
-              ),
-              const Positioned(
-                bottom: 0,
-                child: Menu(),
-              )
+              ResponsiveBreakpoints.of(context).largerThan(TABLET)
+                  ? const Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Picture(),
+                    )
+                  : const SizedBox(),
+              ResponsiveBreakpoints.of(context).largerThan(TABLET)
+                  ? const Positioned(
+                      bottom: 0,
+                      child: Center(child: Menu()),
+                    )
+                  : const SizedBox(),
             ],
           ),
         ),

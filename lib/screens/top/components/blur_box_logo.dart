@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio_flutter/screens/top/components/glass_content.dart';
 
 class BlurBoxLogo extends StatelessWidget {
@@ -12,14 +13,14 @@ class BlurBoxLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: ResponsiveBreakpoints.of(context).largerThan(TABLET) ? CrossAxisAlignment.start : CrossAxisAlignment.center,
       children: [
-        Container(
+        SizedBox(
           height: 100,
           width: 100,
           child: Image.asset('assets/logo.png'),
         ),
-        const Spacer(),
+        // const Spacer(),
         GlassContent(size: size),
         const Spacer(flex: 3),
       ],

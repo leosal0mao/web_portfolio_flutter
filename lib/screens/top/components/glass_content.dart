@@ -14,13 +14,14 @@ class GlassContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var localization = AppLocalizations.of(context);
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding * 2),
-          constraints: BoxConstraints(maxWidth: size.width * 0.8, maxHeight: size.height * 0.7),
+          constraints: BoxConstraints(maxWidth: size.width * 0.8, maxHeight: size.height * 0.5),
           width: double.infinity,
           color: Colors.white.withOpacity(0),
           child: Column(
@@ -28,20 +29,21 @@ class GlassContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                AppLocalizations.of(context)!.about,
+                localization!.hello,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white),
               ),
-              const Text(
-                'data',
-                style: TextStyle(
-                  fontSize: 100,
+              const SizedBox(height: 20),
+              Text(
+                '${localization.leonardo} \n${localization.salomao}',
+                style: const TextStyle(
+                  fontSize: 70,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  height: 1.5,
                 ),
               ),
+              const SizedBox(height: 20),
               Text(
-                "data",
+                localization.programmer,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white),
               )
             ],

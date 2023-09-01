@@ -13,16 +13,18 @@ class _MenuState extends State<Menu> {
   int selectedIndex = 0;
   int hoverIndex = 0;
 
-  get localization => AppLocalizations.of(context);
-  List<String> menuItems = ['a', 'b', 'c'];
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
+    var localization = AppLocalizations.of(context);
+
+    List<String> menuItems = [
+      localization!.home,
+      localization.about,
+      localization.services,
+      localization.recentWorks,
+      localization.contact,
+    ];
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding * 2.5),
       constraints: const BoxConstraints(maxWidth: 1110),
@@ -39,13 +41,13 @@ class _MenuState extends State<Menu> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
           menuItems.length,
-          (index) => buildMenuItem(index),
+          (index) => buildMenuItem(index, context, menuItems),
         ),
       ),
     );
   }
 
-  Widget buildMenuItem(int index) => InkWell(
+  Widget buildMenuItem(int index, BuildContext context, List<String> menuItems) => InkWell(
         onTap: () {
           setState(() {
             selectedIndex = index;
@@ -68,7 +70,7 @@ class _MenuState extends State<Menu> {
               duration: const Duration(milliseconds: 200),
               left: 0,
               right: 0,
-              bottom: selectedIndex != index && hoverIndex == index ? -20 : -32,
+              bottom: selectedIndex != index && hoverIndex == index ? -2 : -32,
               child: Image.asset("assets/hover.png"),
             ),
             // Select
