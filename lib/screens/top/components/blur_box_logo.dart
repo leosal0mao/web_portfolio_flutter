@@ -20,7 +20,6 @@ class BlurBoxLogo extends StatelessWidget {
           width: 100,
           child: Image.asset('assets/logo.png'),
         ),
-        // const Spacer(),
         GlassContent(size: size),
         const Spacer(flex: 3),
       ],
