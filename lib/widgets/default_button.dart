@@ -19,9 +19,10 @@ class DefaultButton extends StatelessWidget {
     return TextButton(
       onPressed: press,
       style: TextButton.styleFrom(
+        textStyle: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         padding: const EdgeInsets.symmetric(
           vertical: kDefaultPadding,
-          horizontal: kDefaultPadding * 2.5,
+          horizontal: kDefaultPadding * 2.2,
         ),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
         backgroundColor: const Color(0xFFE8F0F9),
