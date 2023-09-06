@@ -19,7 +19,7 @@ class AboutText extends StatelessWidget {
                 color: Colors.black,
               ),
         ),
-        const SizedBox(height: kDefaultPadding * 2),
+        const SizedBox(height: kDefaultPadding * 1.2),
       ],
     );
   }

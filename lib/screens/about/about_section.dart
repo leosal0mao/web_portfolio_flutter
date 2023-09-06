@@ -58,7 +58,9 @@ class AboutSection extends StatelessWidget {
                   DefaultButton(
                     imageSrc: "assets/download.png",
                     text: localization.downloadCV,
-                    press: () {},
+                    press: () {
+                      // downloadPDF();
+                    },
                   ),
                 ],
               ),
@@ -72,7 +74,9 @@ class AboutSection extends StatelessWidget {
                 text:
                     "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
               ),
+              const SizedBox(height: 10),
               const ExperienceCard(numOfExp: "03"),
+              const SizedBox(height: 10),
               const AboutSectionText(
                 text:
                     "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -80,6 +84,7 @@ class AboutSection extends StatelessWidget {
               const SizedBox(height: kDefaultPadding * 3),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   OutlineButton(
                     imageSrc: "assets/hand.png",
@@ -90,11 +95,22 @@ class AboutSection extends StatelessWidget {
                   DefaultButton(
                     imageSrc: "assets/download.png",
                     text: localization.downloadCV,
-                    press: () {},
+                    press: () {
+                      // downloadPDF();
+                    },
                   ),
                 ],
               ),
             ],
           );
   }
+
+  // void downloadPDF() {
+  //   File file = 'assets/cv-ptbr.pdf';
+
+  //   final content = base64Encode(file as List<int>);
+  //   final anchor = AnchorElement(href: "data:application/octet-stream;charset=utf-16le;base64,$content")
+  //     ..setAttribute("download", "file.pdf")
+  //     ..click();
+  // }
 }

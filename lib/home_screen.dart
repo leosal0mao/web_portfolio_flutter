@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio_flutter/helpers/constants.dart';
 
 import 'screens/about/about_section.dart';
@@ -12,16 +13,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(children: [
-          TopSection(),
-          SizedBox(height: kDefaultPadding),
-          AboutSection(),
-          ServicesSection(),
-          RecentWorksSection(),
-          SizedBox(height: kDefaultPadding),
-          ContactSection(),
+          const TopSection(),
+          SizedBox(height: ResponsiveBreakpoints.of(context).smallerThan(TABLET) ? kDefaultPadding / 2.5 : kDefaultPadding),
+          const AboutSection(),
+          const ServicesSection(),
+          const RecentWorksSection(),
+          const SizedBox(height: kDefaultPadding),
+          const ContactSection(),
         ]),
       ),
     );

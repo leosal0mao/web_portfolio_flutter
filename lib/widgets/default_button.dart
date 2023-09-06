@@ -22,7 +22,7 @@ class DefaultButton extends StatelessWidget {
         textStyle: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         padding: const EdgeInsets.symmetric(
           vertical: kDefaultPadding,
-          horizontal: kDefaultPadding * 2.2,
+          horizontal: kDefaultPadding * 1.8,
         ),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
         backgroundColor: const Color(0xFFE8F0F9),

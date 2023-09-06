@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio_flutter/helpers/constants.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -35,8 +36,8 @@ class GlassContent extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 '${localization.leonardo} \n${localization.salomao}',
-                style: const TextStyle(
-                  fontSize: 70,
+                style: TextStyle(
+                  fontSize: ResponsiveBreakpoints.of(context).largerThan(TABLET) ? 70 : 50,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -44,7 +45,9 @@ class GlassContent extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 localization.programmer,
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white),
+                style: ResponsiveBreakpoints.of(context).largerThan(TABLET)
+                    ? Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white)
+                    : Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.white),
               )
             ],
           ),

@@ -15,7 +15,9 @@ class TopSection extends StatelessWidget {
     return Material(
       child: Container(
         alignment: Alignment.center,
-        constraints: BoxConstraints(maxHeight: size.height.toDouble(), minHeight: 700),
+        constraints: ResponsiveBreakpoints.of(context).largerThan(TABLET)
+            ? BoxConstraints(maxHeight: size.height.toDouble(), minHeight: 700)
+            : BoxConstraints(maxHeight: size.height.toDouble() / 1.5, minHeight: 0),
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -24,7 +26,7 @@ class TopSection extends StatelessWidget {
           ),
         ),
         child: Container(
-          margin: const EdgeInsets.only(top: kDefaultPadding),
+          margin: ResponsiveBreakpoints.of(context).largerThan(TABLET) ? const EdgeInsets.only(top: kDefaultPadding) : null,
           width: 1200,
           child: Stack(
             children: [

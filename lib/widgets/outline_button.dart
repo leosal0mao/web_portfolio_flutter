@@ -21,7 +21,7 @@ class OutlineButton extends StatelessWidget {
           textStyle: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
           padding: const EdgeInsets.symmetric(
             vertical: kDefaultPadding,
-            horizontal: kDefaultPadding * 2.2,
+            horizontal: kDefaultPadding * 2.0,
           ),
           shape: RoundedRectangleBorder(
             side: const BorderSide(color: Color(0xFFEDEDED)),
