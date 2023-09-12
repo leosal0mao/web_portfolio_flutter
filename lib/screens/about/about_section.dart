@@ -49,12 +49,6 @@ class AboutSection extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  OutlineButton(
-                    imageSrc: "assets/hand.png",
-                    text: localization.hireMe,
-                    press: () {},
-                  ),
-                  const SizedBox(width: kDefaultPadding * 1.5),
                   DefaultButton(
                     imageSrc: "assets/download.png",
                     text: localization.downloadCV,
@@ -86,12 +80,6 @@ class AboutSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  OutlineButton(
-                    imageSrc: "assets/hand.png",
-                    text: localization.hireMe,
-                    press: () {},
-                  ),
-                  const SizedBox(width: 5),
                   DefaultButton(
                     imageSrc: "assets/download.png",
                     text: localization.downloadCV,
@@ -104,13 +92,4 @@ class AboutSection extends StatelessWidget {
             ],
           );
   }
-
-  // void downloadPDF() {
-  //   File file = 'assets/cv-ptbr.pdf';
-
-  //   final content = base64Encode(file as List<int>);
-  //   final anchor = AnchorElement(href: "data:application/octet-stream;charset=utf-16le;base64,$content")
-  //     ..setAttribute("download", "file.pdf")
-  //     ..click();
-  // }
 }

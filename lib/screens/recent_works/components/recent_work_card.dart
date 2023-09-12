@@ -1,6 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -29,6 +29,9 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
     var localization = AppLocalizations.of(context)!;
     var size = MediaQuery.of(context).size;
     return Card(
+      elevation: 10,
+      shadowColor: Colors.black45,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       color: Colors.white,
       child: InkWell(
         onTap: widget.press,
@@ -38,10 +41,11 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
           });
         },
         child: Row(children: [
-          Container(
-            width: size.width / 8,
-            height: size.height / 4,
+          ClipRRect(
+            borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
             child: Image.asset(
+              width: ResponsiveBreakpoints.of(context).largerThan(TABLET) ? size.width / 6 : size.width / 3,
+              height: size.height / 3,
               widget.recentWork.image!,
               fit: BoxFit.fill,
             ),
@@ -53,11 +57,14 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(widget.recentWork.category!.toUpperCase()),
+                Text(
+                  widget.recentWork.category!.toUpperCase(),
+                ),
                 const SizedBox(height: kDefaultPadding / 2),
                 Text(
+                  maxLines: 7,
                   widget.recentWork.title!,
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(height: 1.5),
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.5),
                 ),
                 const SizedBox(height: kDefaultPadding),
                 RichText(

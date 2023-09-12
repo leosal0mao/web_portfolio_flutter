@@ -23,5 +23,10 @@
     "contactMe": "Contact me! :)",
     "viewDetails": "View details",
     "myOldPortfolio": "My old portfolio :)",
-    "webDevelopment": "Web development"
+    "webDevelopment": "Web development",
+    "financesAppDescription": "Mobile based application that allows users to control their finances.",
+    "mobileDevelopment": "Mobile development",
+    "cbSongsDescription": "Node.js discord bot made for fun, used for playing songs directly from youtube or spotify on any servers that I allow it.",
+    "backendDevelopment": "Backend development",
+    "firstfolioDescription": "My first portfolio, a study in Flutter web."
 }

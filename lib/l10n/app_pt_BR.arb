@@ -23,5 +23,10 @@
     "contactMe": "Entre em contato! :)",
     "viewDetails": "Ver detalhes",
     "myOldPortfolio": "Meu antigo portfolio :)",
-    "webDevelopment": "Desenvolvimento web"
+    "webDevelopment": "Desenvolvimento web",
+    "financesAppDescription": "Aplicativo móvel que permite que usuários controlem suas finanças.",
+    "mobileDevelopment": "Desenvolvimento mobile",
+    "cbSongsDescription": "Bot feito em Node.js, usado para tocar músicas diretamente do spotify ou youtube em servidores que lhe é dado permissão.",
+    "backendDevelopment": "Desenvolvimento Backend",
+    "firstfolioDescription": "Meu primeiro portfolio, um experimento com o Flutter web."
 }

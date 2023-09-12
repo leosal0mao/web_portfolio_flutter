@@ -28,6 +28,7 @@ class DefaultButton extends StatelessWidget {
         backgroundColor: const Color(0xFFE8F0F9),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(imageSrc, height: 40),
           const SizedBox(width: kDefaultPadding),
