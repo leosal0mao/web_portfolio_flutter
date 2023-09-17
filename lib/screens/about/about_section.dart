@@ -5,7 +5,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../helpers/constants.dart';
 import '../../widgets/default_button.dart';
-import '../../widgets/outline_button.dart';
 import 'components/about_section_text.dart';
 import 'components/experience_card.dart';
 

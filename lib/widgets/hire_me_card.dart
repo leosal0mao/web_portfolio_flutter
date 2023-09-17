@@ -117,10 +117,10 @@ class HireMeCard extends StatelessWidget {
   }
 
   _launchUrl(String url) async {
-    final Uri _url = Uri.parse(url);
+    final Uri link = Uri.parse(url);
 
-    if (!await launchUrl(_url)) {
-      throw Exception('Could not launch $_url');
+    if (!await launchUrl(link)) {
+      throw Exception('Could not launch $link');
     }
   }
 }

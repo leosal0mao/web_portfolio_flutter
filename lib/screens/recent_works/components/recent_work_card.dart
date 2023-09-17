@@ -4,7 +4,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'package:web_portfolio_flutter/models/RecentWorkModel.dart';
+import 'package:web_portfolio_flutter/models/recent_work_model.dart';
 
 import '../../../helpers/constants.dart';
 
@@ -86,10 +86,10 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
   }
 
   _launchUrl(String url) async {
-    final Uri _url = Uri.parse(url);
+    final Uri link = Uri.parse(url);
 
-    if (!await launchUrl(_url)) {
-      throw Exception('Could not launch $_url');
+    if (!await launchUrl(link)) {
+      throw Exception('Could not launch $link');
     }
   }
 }

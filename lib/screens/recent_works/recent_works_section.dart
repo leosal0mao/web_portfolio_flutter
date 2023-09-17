@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:web_portfolio_flutter/models/RecentWorkModel.dart';
+import 'package:web_portfolio_flutter/models/recent_work_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -72,7 +72,7 @@ class RecentWorksSection extends StatelessWidget {
           ),
           const SizedBox(height: kDefaultPadding * 1.5),
           ResponsiveBreakpoints.of(context).largerThan(TABLET)
-              ? Container(
+              ? SizedBox(
                   height: size.height / 1.3,
                   child: Padding(
                     padding: const EdgeInsets.only(left: kDefaultPadding * 2, right: kDefaultPadding * 2),

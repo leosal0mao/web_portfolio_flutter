@@ -21,7 +21,6 @@ class HomeScreen extends StatelessWidget {
           const AboutSection(),
           const ServicesSection(),
           const RecentWorksSection(),
-          const SizedBox(height: kDefaultPadding),
           const ContactSection(),
         ]),
       ),

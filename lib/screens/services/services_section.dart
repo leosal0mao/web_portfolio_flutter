@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../helpers/constants.dart';
-import '../../models/ServiceModel.dart';
+import '../../models/service_model.dart';
 import '../../widgets/section_title.dart';
 import 'components/service_card.dart';
 

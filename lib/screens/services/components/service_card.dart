@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../helpers/constants.dart';
-import '../../../models/ServiceModel.dart';
+import '../../../models/service_model.dart';
 
 class ServiceCard extends StatefulWidget {
   const ServiceCard({
