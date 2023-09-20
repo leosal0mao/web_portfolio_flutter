@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_portfolio_flutter/helpers/constants.dart';
 import 'package:web_portfolio_flutter/screens/contact/components/social_media_card.dart';
 
@@ -27,6 +28,7 @@ class ContactBox extends StatelessWidget {
       ),
       child: ResponsiveBreakpoints.of(context).largerThan(TABLET)
           ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -35,13 +37,17 @@ class ContactBox extends StatelessWidget {
                       iconSrc: 'assets/telegram.png',
                       name: 'Telegram',
                       color: const Color(0xFFE8F0F9),
-                      press: () {},
+                      press: () {
+                        _launchUrl('https://t.me/nashzen');
+                      },
                     ),
                     SocialMediaCard(
                       iconSrc: 'assets/linkedin.png',
                       name: 'Linkedin',
                       color: const Color(0xFFD9FFFC),
-                      press: () {},
+                      press: () {
+                        _launchUrl('https://www.linkedin.com/in/leosalomao20/');
+                      },
                     ),
                   ],
                 ),
@@ -50,24 +56,37 @@ class ContactBox extends StatelessWidget {
               ],
             )
           : Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SocialMediaCard(
                   iconSrc: 'assets/telegram.png',
                   name: 'Telegram',
                   color: const Color(0xFFE8F0F9),
-                  press: () {},
+                  press: () {
+                    _launchUrl('https://t.me/nashzen');
+                  },
                 ),
+                const SizedBox(height: kDefaultPadding),
                 SocialMediaCard(
                   iconSrc: 'assets/linkedin.png',
                   name: 'Linkedin',
                   color: const Color(0xFFD9FFFC),
-                  press: () {},
+                  press: () {
+                    _launchUrl('https://www.linkedin.com/in/leosalomao20/');
+                  },
                 ),
                 const SizedBox(height: kDefaultPadding * 2),
                 child
               ],
             ),
     );
+  }
+
+  _launchUrl(String url) async {
+    final Uri link = Uri.parse(url);
+
+    if (!await launchUrl(link)) {
+      throw Exception('Could not launch $link');
+    }
   }
 }

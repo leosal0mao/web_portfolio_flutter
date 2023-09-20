@@ -3,12 +3,14 @@ import 'package:web_portfolio_flutter/helpers/constants.dart';
 import 'package:web_portfolio_flutter/screens/contact/components/contact_box.dart';
 import 'package:web_portfolio_flutter/screens/contact/components/contact_form.dart';
 import 'package:web_portfolio_flutter/widgets/section_title.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var localization = AppLocalizations.of(context)!;
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
@@ -18,16 +20,16 @@ class ContactSection extends StatelessWidget {
           image: AssetImage("assets/background2.png"),
         ),
       ),
-      child: const Column(
+      child: Column(
         children: [
-          SizedBox(height: kDefaultPadding * 1.5),
+          const SizedBox(height: kDefaultPadding * 1.5),
           SectionTitle(
-            subtitle: 'subtitle',
-            color: Color(0xFF07E24A),
-            title: 'title',
+            subtitle: localization.moreInfo,
+            color: const Color(0xFF07E24A),
+            title: localization.contactMe,
           ),
-          SizedBox(height: kDefaultPadding),
-          ContactBox(child: ContactForm()),
+          const SizedBox(height: kDefaultPadding),
+          const ContactBox(child: ContactForm()),
         ],
       ),
     );

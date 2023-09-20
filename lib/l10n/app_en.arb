@@ -28,5 +28,13 @@
     "mobileDevelopment": "Mobile development",
     "cbSongsDescription": "Node.js discord bot made for fun, used for playing songs directly from youtube or spotify on any servers that I allow it.",
     "backendDevelopment": "Backend development",
-    "firstfolioDescription": "My first portfolio, a study in Flutter web."
+    "firstfolioDescription": "My first portfolio, a study in Flutter web.",
+    "moreInfo": "If you want to quote a project",
+    "yourName": "Your name",
+    "enterName": "Enter your name",
+    "emailAdress": "Email address",
+    "enterEmail": "Enter your email address",
+    "yourMessage": "Your message",
+    "enterMessage": "Enter your message",
+    "send": "Send!"
 }

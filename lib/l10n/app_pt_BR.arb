@@ -28,5 +28,13 @@
     "mobileDevelopment": "Desenvolvimento mobile",
     "cbSongsDescription": "Bot feito em Node.js, usado para tocar músicas diretamente do spotify ou youtube em servidores que lhe é dado permissão.",
     "backendDevelopment": "Desenvolvimento Backend",
-    "firstfolioDescription": "Meu primeiro portfolio, um experimento com o Flutter web."
+    "firstfolioDescription": "Meu primeiro portfolio, um experimento com o Flutter web.",
+    "moreInfo": "Para orçar um projeto",
+    "yourName": "Seu nome",
+    "enterName": "Informe seu nome",
+    "emailAdress": "E-mail",
+    "enterEmail": "Informe seu e-mail",
+    "yourMessage": "Sua mensagem",
+    "enterMessage": "Mensagem",
+    "send": "Enviar!"
 }
