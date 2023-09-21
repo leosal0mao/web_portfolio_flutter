@@ -25,21 +25,19 @@ class AboutSection extends StatelessWidget {
     return ResponsiveBreakpoints.of(context).largerThan(TABLET)
         ? Column(
             children: [
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AboutText(),
+                  const AboutText(),
                   Expanded(
                     child: AboutSectionText(
-                      text:
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                      text: localization.aboutMe1,
                     ),
                   ),
-                  ExperienceCard(numOfExp: "03"),
+                  const ExperienceCard(numOfExp: "03"),
                   Expanded(
                     child: AboutSectionText(
-                      text:
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                      text: localization.aboutMe2,
                     ),
                   ),
                 ],
@@ -63,16 +61,12 @@ class AboutSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const AboutText(),
-              const AboutSectionText(
-                text:
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-              ),
+              AboutSectionText(text: localization.aboutMe1),
               const SizedBox(height: 10),
               const ExperienceCard(numOfExp: "03"),
               const SizedBox(height: 10),
-              const AboutSectionText(
-                text:
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              AboutSectionText(
+                text: localization.aboutMe2,
               ),
               const SizedBox(height: kDefaultPadding * 3),
               Row(
