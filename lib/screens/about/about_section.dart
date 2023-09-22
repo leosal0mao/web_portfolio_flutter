@@ -7,6 +7,7 @@ import '../../helpers/constants.dart';
 import '../../widgets/default_button.dart';
 import 'components/about_section_text.dart';
 import 'components/experience_card.dart';
+import 'dart:html' as html;
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -22,6 +23,8 @@ class AboutSection extends StatelessWidget {
 
   Widget buildContent(BuildContext context) {
     var localization = AppLocalizations.of(context)!;
+    final Locale appLocale = Localizations.localeOf(context);
+
     return ResponsiveBreakpoints.of(context).largerThan(TABLET)
         ? Column(
             children: [
@@ -50,7 +53,11 @@ class AboutSection extends StatelessWidget {
                     imageSrc: "assets/download.png",
                     text: localization.downloadCV,
                     press: () {
-                      // downloadPDF();
+                      if (appLocale.languageCode == 'en') {
+                        downloadFile('https://drive.google.com/uc?export=download&id=1xIU71BICAVZGlUpqQZHNLz-fnJdC5rIe');
+                      } else {
+                        downloadFile('https://drive.google.com/uc?export=download&id=1aliAfsVbcqMNH10okrwRn3bj7538B39L');
+                      }
                     },
                   ),
                 ],
@@ -77,12 +84,22 @@ class AboutSection extends StatelessWidget {
                     imageSrc: "assets/download.png",
                     text: localization.downloadCV,
                     press: () {
-                      // downloadPDF();
+                      if (appLocale == 'en') {
+                        downloadFile('https://drive.google.com/uc?export=download&id=1xIU71BICAVZGlUpqQZHNLz-fnJdC5rIe');
+                      } else {
+                        downloadFile('https://drive.google.com/uc?export=download&id=1aliAfsVbcqMNH10okrwRn3bj7538B39L');
+                      }
                     },
                   ),
                 ],
               ),
             ],
           );
+  }
+
+  void downloadFile(String url) {
+    html.AnchorElement anchorElement = html.AnchorElement(href: url);
+    anchorElement.download = url;
+    anchorElement.click();
   }
 }

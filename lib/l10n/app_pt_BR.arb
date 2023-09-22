@@ -40,5 +40,8 @@
     "aboutMe1": "Sou um desenvolvedor de software com experiencia principalmente em Flutter, com conhecimentos em JavaScript, em frameworks como React, Node.js e Three.js. Tenho facilidade para aprender tecnologias novas e trabalhar em equipe com clientes para criar soluções eficientes, escaláveis e intuitivas que resolvam problemas reais. Vamos trabalhar juntos para dar vida aos seus projetos!",
     "aboutMe2": "Os projetos a seguir mostram minhas habilidades e experiencias por meio de exemplos reais dos meus trabalhos. Cada projeto contém uma descrição e links para os seus repositórios. Isso reflete minha capacidade de resolver problemas complexos, trabalhar com diferentes tecnologias e gerenciar projetos efetivamente.",
     "sucessEmail": "Obrigado pelo e-mail! Em breve entrarei em contato.",
-    "failEmail": "Falha em enviar o e-mail, tente novamente mais tarde."
+    "failEmail": "Falha em enviar o e-mail, tente novamente mais tarde.",
+    "validateName": "Digite um nome válido",
+    "validateEmail": "Digite um email válido",
+    "validateMessage": "Não seja tímido, me mande uma mensagem :)"
 }

@@ -39,9 +39,9 @@ class TopSection extends StatelessWidget {
                     )
                   : const SizedBox(),
               ResponsiveBreakpoints.of(context).largerThan(TABLET)
-                  ? const Positioned(
+                  ? Positioned(
                       bottom: 0,
-                      child: Center(child: Menu()),
+                      child: Center(child: Container()),
                     )
                   : const SizedBox(),
             ],

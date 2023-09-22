@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:web_portfolio_flutter/helpers/constants.dart';
+import 'package:web_portfolio_flutter/helpers/validator_mixin.dart';
 import 'package:web_portfolio_flutter/models/send_email_model.dart';
 import 'package:web_portfolio_flutter/widgets/default_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ContactForm extends StatelessWidget {
+class ContactForm extends StatelessWidget with InputValidationMixin {
   const ContactForm({super.key});
 
   RegExp get _emailRegex => RegExp(r'^\S+@\S+$');
@@ -18,7 +19,10 @@ class ContactForm extends StatelessWidget {
     String _message = '';
     String _email = '';
 
+    final formGlobalKey = GlobalKey<FormState>();
+
     return Form(
+      key: formGlobalKey,
       child: Column(
         children: [
           SizedBox(
@@ -26,6 +30,13 @@ class ContactForm extends StatelessWidget {
             child: TextFormField(
               onChanged: (value) {
                 _name = value;
+              },
+              validator: (name) {
+                if (name!.isEmpty) {
+                  return localization.validateName;
+                } else {
+                  return null;
+                }
               },
               decoration: InputDecoration(
                 labelText: localization.yourName,
@@ -50,11 +61,11 @@ class ContactForm extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40.0),
                 ),
               ),
-              validator: (value) {
-                if (!_emailRegex.hasMatch(value!)) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Invalid email')),
-                  );
+              validator: (email) {
+                if (isEmailValid(email!)) {
+                  return null;
+                } else {
+                  return localization.validateEmail;
                 }
               },
             ),
@@ -66,6 +77,13 @@ class ContactForm extends StatelessWidget {
               maxLines: size.height ~/ 90,
               onChanged: (value) {
                 _message = value;
+              },
+              validator: (message) {
+                if (message!.isEmpty) {
+                  return localization.validateMessage;
+                } else {
+                  return null;
+                }
               },
               decoration: InputDecoration(
                 labelText: localization.yourMessage,
@@ -83,7 +101,9 @@ class ContactForm extends StatelessWidget {
                   text: localization.send,
                   imageSrc: 'assets/contact_icon.png',
                   press: () {
-                    sendEmail(name: _name, email: _email, message: _message, context: context);
+                    if (formGlobalKey.currentState!.validate()) {
+                      sendEmail(name: _name, email: _email, message: _message, context: context);
+                    }
                   }),
             ),
           )
