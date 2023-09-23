@@ -13,9 +13,9 @@ Future sendEmail({
 }) async {
   var localization = AppLocalizations.of(context!)!;
 
-  final serviceId = 'service_k56rzlq';
-  final templateId = 'template_f8sbhak';
-  final userId = 'XWWDgO2sSf_eRPt_T';
+  const serviceId = 'service_k56rzlq';
+  const templateId = 'template_f8sbhak';
+  const userId = 'XWWDgO2sSf_eRPt_T';
 
   final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
   final response = await http.post(

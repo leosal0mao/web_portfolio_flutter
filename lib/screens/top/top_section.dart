@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio_flutter/helpers/constants.dart';
-import 'package:web_portfolio_flutter/screens/top/components/menu.dart';
 import 'package:web_portfolio_flutter/screens/top/components/picture.dart';
 
 import 'components/blur_box_logo.dart';

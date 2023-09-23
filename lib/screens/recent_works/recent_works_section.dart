@@ -46,8 +46,6 @@ class RecentWorksSection extends StatelessWidget {
     List<RecentWorkModel> recentWorks3 = recentWorks1 + recentWorks2;
 
     var size = MediaQuery.of(context).size;
-    final double itemHeight = (size.height) / 2;
-    final double itemWidth = size.width / 2;
 
     return Container(
       margin: const EdgeInsets.only(top: kDefaultPadding * 6),

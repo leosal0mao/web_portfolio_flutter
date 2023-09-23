@@ -8,16 +8,14 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ContactForm extends StatelessWidget with InputValidationMixin {
   const ContactForm({super.key});
 
-  RegExp get _emailRegex => RegExp(r'^\S+@\S+$');
-
   @override
   Widget build(BuildContext context) {
     var localization = AppLocalizations.of(context)!;
     var size = MediaQuery.of(context).size;
 
-    String _name = '';
-    String _message = '';
-    String _email = '';
+    String name = '';
+    String message = '';
+    String email = '';
 
     final formGlobalKey = GlobalKey<FormState>();
 
@@ -29,7 +27,7 @@ class ContactForm extends StatelessWidget with InputValidationMixin {
             width: size.width / 1.5,
             child: TextFormField(
               onChanged: (value) {
-                _name = value;
+                name = value;
               },
               validator: (name) {
                 if (name!.isEmpty) {
@@ -52,7 +50,7 @@ class ContactForm extends StatelessWidget with InputValidationMixin {
             width: size.width / 1.5,
             child: TextFormField(
               onChanged: (value) {
-                _email = value;
+                email = value;
               },
               decoration: InputDecoration(
                 labelText: localization.emailAdress,
@@ -76,7 +74,7 @@ class ContactForm extends StatelessWidget with InputValidationMixin {
             child: TextFormField(
               maxLines: size.height ~/ 90,
               onChanged: (value) {
-                _message = value;
+                message = value;
               },
               validator: (message) {
                 if (message!.isEmpty) {
@@ -102,7 +100,7 @@ class ContactForm extends StatelessWidget with InputValidationMixin {
                   imageSrc: 'assets/contact_icon.png',
                   press: () {
                     if (formGlobalKey.currentState!.validate()) {
-                      sendEmail(name: _name, email: _email, message: _message, context: context);
+                      sendEmail(name: name, email: email, message: message, context: context);
                     }
                   }),
             ),
